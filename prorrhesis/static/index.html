@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRORRHESIS</title>
+<link rel="stylesheet" href="/static/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#9917;</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <span class="brand">Prorrhesis</span>
+  <nav class="tabs" id="tabs" role="tablist"></nav>
+  <div class="right">
+    <span id="status" class="muted small" role="status" aria-live="polite"></span>
+    <button class="icon-btn" id="refresh" title="Run ingest and predict">Refresh</button>
+    <button class="icon-btn" id="theme" title="Switch between the dark and the light theme">Theme</button>
+  </div>
+</header>
+
+<main id="view" tabindex="-1">
+  <div class="empty">Loading&hellip;</div>
+</main>
+
+<footer>
+  <span id="footer-note">Local lab. All numbers come from the models in this machine; nothing is sent anywhere.</span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

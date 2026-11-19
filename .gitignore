@@ -1,0 +1,12 @@
+data/
+*.db
+*.db-wal
+*.db-shm
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+holdout.lock
+data/alias_overrides.csv
+/PRORRHESIS_SPEC.md
+/_dbg/

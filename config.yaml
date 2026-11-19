@@ -1,0 +1,21 @@
+leagues: {E0: "Premier League", SP1: "La Liga", D1: "Bundesliga", I1: "Serie A", F1: "Ligue 1"}
+first_season: "1415"
+data:
+  user_agent: "prorrhesis/0.1 (personal research)"
+  request_delay_s: 1.0
+  current_season_refetch_min: 60
+features:
+  use_clubelo: true
+  use_understat_xg: false
+  ewma_half_lives: [5, 12]
+  venue_half_life: 8
+  prior_n: 4
+elo: {K: 20, H: {E0: 65, SP1: 70, D1: 60, I1: 65, F1: 65}, rho_season: 0.25, promoted_penalty: 50}
+dc: {window_seasons: 3, half_life_days: 365, gamma: 0.5, max_goals: 10}
+xgp: {w: 0.5}
+gbm: {refit_weeks: 4, early_stop_frac: 0.10}
+stack: {min_rows: 800, recency_half_life_blocks: 40, methods: [logit, logpool, equal]}
+calibrate: {methods: [none, temperature, dirichlet, isotonic], min_rows: {dirichlet: 1500, isotonic: 3000}}
+eval: {eval_start: "2017-08-01", block_days: 7, holdout_seasons: 2, bootstrap_resamples: 5000, seed: 42}
+sim: {n: 10000, relegated: {E0: 3, SP1: 3, D1: 2, I1: 3, F1: 3}, top4: 4}
+server: {host: "127.0.0.1", port: 8000}
